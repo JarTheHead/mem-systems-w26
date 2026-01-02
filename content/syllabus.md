@@ -12,7 +12,7 @@ systems, with a focus on techniques and technologies that enable today’s
 high-performance memory systems.  
 
 ## Communication
-We will use Discord for course communication, and [GitHub](https://github.com/khale/mem-systems-w25/discussions) for online paper and lesson
+We will use Discord for course communication, and [GitHub](https://github.com/khale/mem-systems-w26/discussions) for online paper and lesson
 discussions. You can find the Discord server sign-up link in a Canvas announcement. 
 
 ## Class Sessions
