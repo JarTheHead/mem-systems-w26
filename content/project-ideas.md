@@ -66,7 +66,26 @@ I like to call this the "working without the back of the book" approach.
 [measure]: https://www.usenix.org/conference/atc19/presentation/keynote
 
 ## Some Project Ideas
-You can of course build on any paper we look at in class (or other papers!). Here are some rough ideas
-we've at least thought about in my group. These don't necessarily follow the two approaches above.
+You can of course build on any paper we look at in class (or other papers!). Here are some rough ideas. These don't necessarily follow the two approaches above. If you'd like to know more about one of these, feel free to ask me!
 
-TBD
+- Take an existing published system (e.g., from the papers we cover) and validate their experimental results/findings. 
+- Work with my PhD student on energy-efficient, hybrid architectures. Namely, trying to understand good power control techniques for memory-intensive applications.
+- See if you can apply the idea of [time travel](https://www.usenix.org/conference/2005-usenix-annual-technical-conference/debugging-operating-systems-time-traveling) or [versioning](https://en.wikipedia.org/wiki/Versioning_file_system) to small objects. Maybe also explore how to expose this feature in the programming language. 
+- Investigate the use of [page deduplication](https://en.wikipedia.org/wiki/Kernel_same-page_merging) in disaggregated memory systems. 
+- See if [OS kernels](https://www.usenix.org/conference/osdi21/presentation/bhardwaj) that use [node replication](https://cs.brown.edu/~irina/papers/asplos2017-final.pdf) work well when applied to a disaggregated system.
+- Develop and explore system software support for [Buffets](https://dl.acm.org/doi/10.1145/3297858.3304025), a new communication primitive for AI hardware. 
+- Develop a CXL emulator (on a NUMA system) and implement a user-space daemon to migrate pages between the local and "far" node
+- Compare memory compression (e.g., Linux zswap) to memory tiering (i.e. allocating pages on a remote CXL node)
+- Develop a custom tiered memory allocator for the Linux kernel
+- Add a processing-in-memory (PIM) ISA extension to a RISC-V core that triggers in-memory computation (ala [Tesseract](https://users.ece.cmu.edu/~omutlu/pub/tesseract-pim-architecture-for-graph-processing_isca15.pdf)
+- Apply disaggregated memory (CXL, far memory, etc.) to Genome mapping algorithms (or other scientific workloads) 
+- Implement a CXL controller on an FPGA (doing experiments on CXL access delay)
+- Design a hardware-managed memory-tiering device (simulated or on FPGA). This would track page hotness and automatically migrate data between memory tiers, like [HeteroMem](https://arxiv.org/abs/2502.19233)
+- Take a modern AI workload and understand how it is bottlenecked by the hardware (through experimentation, profiling, and performance counters) 
+- Model the cost/performance of a set of workloads to provision a virtual datacenter, i.e. estimating the total cost of ownership (TCO) for CXL expanders vs local memory
+- Develop a discrete event simulator for analyzing the projected benefits of near-data processing (NDP) in the context of databases
+- Investigate how a state-of-the-art consensus protocol, e.g. Raft or HotStuff, is affected by far memory (CXL) latencies. 
+- Explore using GPU memory (or accelerator memory for some other device) as a far/disaggregated memory tier 
+- Apply [paged attention](https://arxiv.org/pdf/2309.06180) to newer open-source AI models. 
+- Explore hardware support for paged attention or [vAttention](vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention)
+
