@@ -69,13 +69,4 @@ I like to call this the "working without the back of the book" approach.
 You can of course build on any paper we look at in class (or other papers!). Here are some rough ideas
 we've at least thought about in my group. These don't necessarily follow the two approaches above.
 
-- Add profiling support to our [TrackFM](https://dl.acm.org/doi/10.1145/3617232.3624856) compiler. Measure its effectiveness.
-- Work with Nanda on energy-efficient, hybrid architectures. Namely, trying to understand good power control techniques for memory-intensive applications. 
-- Explore combining a fully-persistent OS (see Whole-System Persistence paper) with disaggergated memory
-- Explore using memory pooling (disaggregated memory) with the [Firecracker VMM](https://aws.amazon.com/blogs/aws/firecracker-lightweight-virtualization-for-serverless-computing/).
-- Investigate the use of [page deduplication](https://en.wikipedia.org/wiki/Kernel_same-page_merging) in disaggregated memory systems. 
-- See if you can apply the idea of [time travel](https://www.usenix.org/conference/2005-usenix-annual-technical-conference/debugging-operating-systems-time-traveling) or [versioning](https://en.wikipedia.org/wiki/Versioning_file_system) to small objects. Maybe also explore how to expose this feature in the programming language. 
-- Build a versioned file system for persistent memory and uncover challenges with this idea
-- Adapt a task-parallel runtime system (like [Cilk](https://cilk.mit.edu/runtime/)) to run on the [UPMEM](https://www.upmem.com/) proceessing-in-memory (PIM) architecture. 
-- Extend the [WARDen](https://conf.researchr.org/details/cgo-2023/cgo-2023-main-conference/8/WARDen-Specializing-Cache-Coherence-for-High-Level-Parallel-Languages) framework to automatically select consistency in addition to coherence. 
-- See if [OS kernels](https://www.usenix.org/conference/osdi21/presentation/bhardwaj) that use [node replication](https://cs.brown.edu/~irina/papers/asplos2017-final.pdf) work well when applied to a disaggregated system.
+TBD
