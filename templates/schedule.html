@@ -49,6 +49,9 @@
             {% if reading.details %}
             <br>{{reading.details}}
             {% endif %}
+            {% if class.paper_slides %}
+            <br>[<a href="{{class.paper_slides}}">presentation slides</a>]
+            {% endif %}
           </li>
         {% endfor %}
         </ul>
