@@ -40,7 +40,7 @@ readings = ["rrip"]
 [[classes]]
 lesson = 6
 title = "Shared Memory & Cache Coherence"
-leader = "Lab 4: TBD"
+leader = "Lab 4: Mykyta Synytsia and Isaac Lonergan"
 readings = ["piranha"]
 
 [[classes]]
