@@ -36,9 +36,9 @@
       {% set_global class_idx = class_idx + 1 %}
       <div class="class">
         {% if class.lesson %}
-        {{ macros::lesson_link(id=class.lesson, title=true) }}
+        <b>{{ macros::lesson_link(id=class.lesson, title=true) }}</b>
         {% endif %}
-        {{ class.title | default(value='') }}
+        <b>{{ class.title | default(value='') }}</b>
         {% if class.leader %}({{class.leader}}){% endif %}
         {% if class.readings %}
         <ul>
@@ -51,6 +51,9 @@
             {% endif %}
             {% if class.paper_slides %}
             <br>[<a href="{{class.paper_slides}}">presentation slides</a>]
+            {% endif %}
+            {% if class.blog_link %}
+            <br>[<a href="{{class.blog_link}}">blog post</a>]
             {% endif %}
           </li>
         {% endfor %}

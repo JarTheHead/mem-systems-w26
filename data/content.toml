@@ -23,6 +23,7 @@ lesson = 3
 leader = "Lab 1: Deptmer Martin Ashley and John Aebi"
 readings = ["lee-tiered"]
 paper_slides = "https://canvas.oregonstate.edu/courses/2028992/files/115966217?module_item_id=26474905"
+blog_link = "../blog/tiered-latency-dram"
 
 [[classes]]
 lesson = 4
