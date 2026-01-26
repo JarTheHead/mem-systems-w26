@@ -47,39 +47,21 @@ npm run preview
 
 ## Deploy to GitHub Pages
 
-### Option 1: Deploy as Standalone Repo
+This app is deployed automatically as part of the `mem-systems-w26` site.
 
-If `cc-viz` is its own repository:
+**Automatic deployment**: Push to `main` branch triggers the GitHub Actions workflow which:
+1. Builds cc-viz with `npm run build`
+2. Copies output to `static/cc-viz/`
+3. Builds the Zola site (which includes cc-viz)
+4. Deploys to gh-pages branch
 
-1. Update `base` in `vite.config.ts` to match your repo name (e.g., `/cc-viz/`)
-2. Push to GitHub
-3. Go to **Settings → Pages → Source → GitHub Actions**
-4. The included `.github/workflows/deploy.yml` will auto-deploy on push to `main`
-5. Site will be at `https://<username>.github.io/<repo-name>/`
+**Live URL**: `https://khale.github.io/mem-systems-w26/cc-viz/`
 
-### Option 2: Deploy from Subdirectory (current setup)
-
-Since `cc-viz` is inside `mem-systems-w26`:
-
+**Manual local build**:
 ```bash
-# From the cc-viz directory
 npm run build
-
-# Install gh-pages if needed
-npm install -D gh-pages
-
-# Add deploy script to package.json, then:
-npx gh-pages -d dist
+# Output is in dist/
 ```
-
-Or manually:
-1. Build with `npm run build`
-2. Copy `dist/` contents to a `gh-pages` branch or separate repo
-3. Enable GitHub Pages on that branch
-
-**Note**: Update `base` in `vite.config.ts` to match your deployment path:
-- For `https://user.github.io/cc-viz/` → `base: '/cc-viz/'`
-- For `https://user.github.io/mem-systems-w26/cc-viz/` → `base: '/mem-systems-w26/cc-viz/'`
 
 ## Protocols
 
