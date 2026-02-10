@@ -76,6 +76,7 @@ lesson = 10
 title = "Persistent Memory"
 leader = "Lab 4: TBD"
 readings = ["wsp"]
+paper_slides = "https://canvas.oregonstate.edu/courses/2028992/files/116487406?module_item_id=26523574"
 
 [[classes]]
 lesson = 11
