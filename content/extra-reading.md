@@ -39,6 +39,13 @@ hide = false
 - [Systems Architecture for Quantum Random Access Memory](https://assets.amazon.science/70/be/027e7a9c47239991fb982d8dae7e/systems-architecture-for-quantum-random-access-memory.pdf) - MICRO '23
 - [Fat-Tree QRAM: A High-Bandwidth Shared Quantum Random Access Memory for Parallel Queries](https://arxiv.org/html/2502.06767) - ASPLOS '25
 
+### AI
+- [Alpa](https://www.usenix.org/conference/osdi22/presentation/zheng-lianmin) - OSDI '22
+- [Orca](https://www.usenix.org/conference/osdi22/presentation/yu) - OSDI '22
+- [vAttention](https://arxiv.org/abs/2405.04437) - ASPLOS '25
+- [SGLang](https://arxiv.org/abs/2312.07104) - NeurIPS '24
+- [WaferLLM](https://www.usenix.org/conference/osdi25/presentation/he) - OSDI '25
+- [BlitzScale](https://www.usenix.org/conference/osdi25/presentation/zhang-dingyan) - OSDI '25
 
 ## Miscellaneous Research Advice
 Here are some extra readings containing priceless advice on conducting systems research (and research more broadly)
