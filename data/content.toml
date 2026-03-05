@@ -120,6 +120,7 @@ title = "Memory Tiering"
 leader = "Lab 1: Jared Ho & Brian Castellon Rosales"
 readings = ["tpp"]
 paper_slides = "https://canvas.oregonstate.edu/courses/2028992/files/116902097?module_item_id=26569630"
+blog_link = "../blog/tpp-transparent-page-placement-for-cxl-enabled-tiered-memory"
 
 [[classes]]
 lesson = 16
