@@ -53,15 +53,19 @@ These findings were the main motivations for designing a new remote fork interfa
 
 ## Design of CXLfork
 
-CXLfork addresses the challenges of remote cloning through three primary innovations:
+***CXLfork*** addresses the challenges of remote cloning through three innovations:
 
-- **1. Near-Zero Serialization** Instead of converting process state into a portable file format, CXLfork checkpoints process data and OS structures (like page tables) to CXL memory exactly as they are. To allow different OS instances to use these structures, CXLfork rebases them to index the CXL physical memory address space.
-- **2. Direct State Mapping** By default, CXLfork maps the checkpointed state in CXL memory directly into the cloned process on the remote node. It uses Copy-on-Write (CoW) for any modifications, ensuring that the majority of the process remains shared and deduplicated across the cluster.
-- **3. Fine-Grained Tiering** To manage the latency overhead of CXL memory (hundreds of nanoseconds), CXLfork provides tailored placement policies:
-  - **Migrate-on-Write (MoW):** Localizes only the data that is being modified.
-  - **Migrate-on-Access (MoA):** Localizes pages as they are accessed to minimize future CXL latency.
-  - **Hybrid Tiering (HT):** Uses hardware "access" (A) bits to identify and proactively migrate "hot" pages to local memory.
-
+**1. Checkpointing** Instead of converting process state into a portable file format, ***CXLfork*** checkpoints process data and OS structures (like page tables) to CXL memory exactly as they are. To allow different OS instances to use these structures, CXLfork will rebase their internal pointers to index the CXL physical memory address space. This checkpointed data can then be referenced by any node connected to the CXL shared memory.
+![CXLfork Checkpoint](./cxlfork-checkpoint.png)
+  
+ **2. Zero-Copy State Sharing** CXLfork is able to avoid copying process data when requested by a forked node. It does this by mapping the checkpointed data as read-only into the new process' adress space and only initializing the upper levels of the page table tree of the new process in local memory. When a process must write to the checkpointed data, a CoW (Copy on Write) fault is triggered and data is copied to the node's local memory. This allows the majority of a process remains shared and deduplicated across the cluster.
+![CXLfork Restore](./cxlfork-restore.png)
+  
+**3. Tiering Policies** To manage the latency overhead of CXL memory, CXLfork provides three different tiering policies for copying read-only data to local memory:
+  - **Migrate-on-Write:** Localizes only the data that is being modified.
+  - **Migrate-on-Access:** Localizes pages as they are accessed to minimize future CXL latency.
+  - **Hybrid Tiering:** Uses hardware "access" (A) bits to identify and proactively migrate "hot" pages to local memory.
+![CXLfork Tiering](./cxlfork-tiering.png)
 
 ## CXLporter: Scaling Serverless
 
